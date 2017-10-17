@@ -1,23 +1,44 @@
 <html>
+
 <head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <link rel="stylesheet" href="/milligram.css">
+<style media="screen">
+  .banner {
+display: block;
+max-width:80%;
+max-height:80%;
+width: auto;
+height: auto;
+  }
+</style>
 </head>
+
 <body>
   <div class="container">
     <h1>Official AHS Overwatch Competition</h1>
     <h3>Winner takes home $200!</h3>
+    <div id="regist">
+      <h2>Register</h2><br>
+      Email <input id="email" type="text"><br>
+      Password <input id="password" type="password"><br>
+      Retype Password <input type="password"><br>
+      <input type="button" class="subbutton" value="Sign Up"></input>
 
-    <h2>Register</h2><br>
-    Email <input type="text"><br>
-    Password <input type="password"><br>
-    Retype Password <input type="password"><br>
-    <input type="button" value="Sign Up"></input>
-
+    </div>
   </div>
 
 <script type="text/javascript">
-  $.ajax('')
+  $('.subbutton').click(function(){
+    var email = document.getElementById('email').value
+    var password = document.getElementById('password').value
+    $.ajax('http://35.184.12.221/user/'+email+":"+password)
+    .fail(function(){
+      document.getElementById('regist').innerHTML = "Thank you for signing up. We will be in touch shortly."
+    })
+    })
 </script>
+
 </body>
+
 </html>
