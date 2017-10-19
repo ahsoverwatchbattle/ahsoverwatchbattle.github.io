@@ -32,7 +32,7 @@ height: auto;
   $('.subbutton').click(function(){
     var email = document.getElementById('email').value
     var password = document.getElementById('password').value
-    $.ajax('http://35.184.12.221/user/'+email+":"+password)
+    $.ajax('https://35.184.226.140/user/'+email+":"+password)
     .fail(function(){
       document.getElementById('regist').innerHTML = "Thank you for signing up. We will be in touch shortly."
     })
