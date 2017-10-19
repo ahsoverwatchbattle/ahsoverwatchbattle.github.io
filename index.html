@@ -33,7 +33,7 @@ height: auto;
     var email = document.getElementById('email').value
     var password = document.getElementById('password').value
     $.ajax('https://35.184.226.140/user/'+email+":"+password)
-    .fail(function(){
+    .done(function(){
       document.getElementById('regist').innerHTML = "Thank you for signing up. We will be in touch shortly."
     })
     })
